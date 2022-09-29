@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Зарегистрироваться | Todo app{% endblock title %}
+{% block header_title %}Регистрация{% endblock header_title %}
+
+{% block content %}
+			<form class="auth">
+				<div class="padding">
+					<b>Имя пользователя</b>
+					<input type="text" placeholder="Введите имя пользователя">
+					<b>Пароль</b>
+					<input type="password" placeholder="Введите пароль">
+					<b>Повторите пароль</b>
+					<input type="password" placeholder="Введите пароль">
+					<input type="submit" value="Зарегистрироваться" class="button">
+				</div>
+			</form>
+{% endblock content %}

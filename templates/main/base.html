@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}This is base{% endblock title %}</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap" rel="stylesheet"> 
+
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+	<div class="main" id="main">
+		<div class="menu" id="menu">
+			<ul class="menu-content">
+				<li><h2><a href="{% url 'main:tasks' %}">Задания</a></h2></li>
+				<li><h2><a href="{% url 'main:logout' %}">Выход</a></h2></li>
+			</ul>
+		</div>
+		<header>
+			<div>
+				<button class="menu-button" id="menu-button">
+					<i class="menu-icon"></i>
+				</button>
+			
+				<h1>{% block header_title %}This is base{% endblock header_title %}</h1>
+			</div>
+		</header>
+		<div class="content">
+			{% block content %}{% endblock content %}
+		</div>	
+	</div>
+
+	<script src="{% static 'js/menu.js' %}"></script>
+	<script src="{% static 'js/alert.js' %}"></script>
+</body>
+</html>

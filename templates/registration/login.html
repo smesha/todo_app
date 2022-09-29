@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Войти | Todo app{% endblock title %}
+{% block header_title %}Войти{% endblock header_title %}
+
+{% block content %}
+
+{% if form.errors %}
+  <p>Введённые пароль и имя пользователи не правильные. Попробуйте ещё раз.</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p>Ваш аккаунт не имеет доступа к этой странице</p>
+  {% else %}
+    <p>Пожалуйста войдите чтобы увидеть эту страницу</p>
+  {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'main:login' %}" class="auth">
+{% csrf_token %}
+{{ form }}
+
+<input type="submit" value="Отравить" class="button">
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+<p><a href="{% url 'main:password_reset' %}">Забыли свой пароль?</a></p>
+
+{% endblock %}

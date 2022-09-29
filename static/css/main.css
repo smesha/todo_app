@@ -1,0 +1,158 @@
+body {
+	margin: 0px;
+	font-family: 'Rubik', sans-serif;
+}
+
+.main {
+	
+}
+
+a {
+	text-decoration: none;
+	color: #0f7afc;
+}
+
+header {
+	border-bottom: solid 2px grey;
+}
+
+header div {
+	padding: 10px 20px 10px 10px;
+}
+
+header div h1 {
+	margin: 0px;
+	display: inline-block;
+}
+
+.menu-button {
+	border: none;
+	padding: 4px;
+	background: none;
+	transition: 0.2s linear;
+	border-radius: 10px;
+}
+
+.menu-button:active {
+	background: #ccc;
+}
+
+.menu-icon {
+	display: inline-block;
+	width: 32px; height: 30px;
+	background-image: url('/static/img/menu_icon.svg');
+	background-repeat: no-repeat;
+}
+
+.icon-add {
+	display: inline-block;
+	width: 32px; height: 32px;
+	background-image: url('/static/img/icon_add.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.content {
+	margin-top: 20px;
+	padding: 0px 15px 0px 30px;
+}
+
+.item {
+	margin-bottom: 8px;
+}
+
+.item .task-name {
+	font-size: 1.2em;
+}
+
+.checkbox {
+	width: 20px;
+	height: 20px;
+}
+
+.menu {
+	display: none;
+	position: absolute;
+	left: 0px;
+	top: 70px;
+	background: white;
+	box-shadow: 4px 4px 15px black;
+	padding: 10px 15px 10px 20px;
+}
+
+.menu.show {
+	display: block;
+}
+
+.menu-content {
+	padding: 0px;
+}
+
+.menu-content li {
+	list-style-type: none;
+}
+
+.alert {
+	position: absolute;
+	bottom: 0px;
+	padding-bottom: 10px;
+	background-color: red;
+}
+
+.text-align {
+	text-align: center;
+}
+
+form.auth input[type="text"], input[type="password"] {
+	display: block;
+	height: 30px;
+	width: 400px;
+	margin-bottom: 10px;
+}
+
+.padding {
+	padding: 10px;
+}
+
+.margin {
+	margin: 20px;
+}
+
+.button {
+	background: #496885;
+	border: solid 2px #6390ba;
+	border-radius: 10px;
+	color: white;
+	padding: 5px 10px 5px 10px;
+	transition: 1s linear;
+}
+.button:hover {
+	color: black;
+	background: white;
+}
+
+.button:hover i {
+	filter: none;
+}
+
+.button:active i {
+	filter: invert(100%);
+	transition: none;
+}
+
+.button i {
+	transition: 1s linear;
+	filter: invert(100%); 
+}
+
+.button:active {
+	background: #3e5973;
+	transition: none;
+	color: white;
+}
+
+.bottom-left {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
