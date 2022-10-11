@@ -4,9 +4,9 @@ from main.models import Task
 
 class TaskSerializer(serializers.ModelSerializer):
 
-    user = serializers.PrimaryKeyRelatedField(read_only=True, default=serializers.CurrentUserDefault())
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
 
     class Meta:
         model = Task
-        fields = "__all__"
+        fields = ["user", "text", "is_done", "id"]

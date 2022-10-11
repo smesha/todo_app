@@ -108,17 +108,29 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
 	BASE_DIR / 'static/',
+	BASE_DIR / 'static/js',
 
 ]
 
-LOGIN_URL = "main:signin"
+LOGIN_URL = "main:login"
 LOGIN_REDIRECT_URL = "/"
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 20,
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication'
+    )
+}
+
+AUTH_USER_MODEL = 'main.CustomUser'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # импортирование SECRET_KEY и DATABASES
 try:
-    from secret_settings import *
+    from .secret_settings import *
 except ImportError:
     raise Exception("Не найдены секретные настройки. Добавьте файл 'secret_settings.py'")

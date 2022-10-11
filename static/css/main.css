@@ -59,10 +59,27 @@ header div h1 {
 
 .item {
 	margin-bottom: 8px;
+	transition: 0.2s linear;
+	padding-right: 10px;
+}
+.item:hover {
+	background: rgba(0,0,0,0.05);
 }
 
 .item .task-name {
+	border: none;
+	resize: none;
+	width: 100%;
 	font-size: 1.2em;
+	background: none;
+	border: none;
+	margin-right: 5px;
+}
+
+.item .task-name:focus {
+  border: none;
+  outline:none;
+  box-shadow: none;
 }
 
 .checkbox {
@@ -93,10 +110,18 @@ header div h1 {
 }
 
 .alert {
-	position: absolute;
+	position: fixed;
 	bottom: 0px;
-	padding-bottom: 10px;
-	background-color: red;
+	padding: 10px;
+	text-align: center;
+	background-color: #2980B9;
+	transition: 4s linear;
+	width: 100%;
+	color: white;
+}
+
+.alert.close {
+	opacity: 0;
 }
 
 .text-align {
@@ -152,7 +177,34 @@ form.auth input[type="text"], input[type="password"] {
 }
 
 .bottom-left {
-	position: absolute;
+	position: fixed;
 	bottom: 0px;
 	left: 0px;
+	z-index: 100;
+}
+
+.add-task {
+	border: none;
+	background: white;
+	margin-bottom: 10px;
+	font-size: 18px;
+	font-family: 'Rubik', sans-serif;
+	resize: none;
+	width: 100%;
+}
+
+.block {
+	display: block;
+}
+
+.deleteButton {
+	display: none;
+	position: absolute;
+	right: 0px;
+	margin-right: 25px;
+	margin-top: 10px;
+}
+
+.deleteButton.show {
+	display: inline-block;
 }
