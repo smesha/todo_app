@@ -131,8 +131,10 @@ header div h1 {
 form.auth input[type="text"], input[type="password"] {
 	display: block;
 	height: 30px;
-	width: 400px;
+	max-width: 400px;
+	width: 100%;
 	margin-bottom: 10px;
+	margin-right: 5px;
 }
 
 .padding {
